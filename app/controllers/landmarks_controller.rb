@@ -25,7 +25,7 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/edit'
   end
 
-  patch '/landmark/:id' do
+  patch '/landmarks/:id' do
     landmark = Landmark.find(params[:id])
     landmark.update(params[:landmark])
     flash[:message] = "Successfully edited landmark."
