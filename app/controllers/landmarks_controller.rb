@@ -13,4 +13,9 @@ class LandmarksController < ApplicationController
     flash[:message] = "Successfully created landmark."
     redirect "landmarks/#{landmark.id}"
   end
+
+  get 'landmarks/:id' do
+    @landmark = Landmark.find(params[:id])
+    erb :'/landmarks/show'
+  end
 end
