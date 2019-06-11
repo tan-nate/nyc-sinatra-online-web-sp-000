@@ -8,7 +8,7 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/new'
   end
 
-  post '/figures' do
+  post '/landmarks' do
     landmark = Landmark.create(params[:landmark])
     flash[:message] = "Successfully created landmark."
     redirect "landmarks/#{landmark.id}"
