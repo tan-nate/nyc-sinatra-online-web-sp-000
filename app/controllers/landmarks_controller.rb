@@ -16,6 +16,7 @@ class LandmarksController < ApplicationController
 
   get '/landmarks/:id' do
     @landmark = Landmark.find(params[:id])
+    binding.pry
     erb :'/landmarks/show'
   end
 
