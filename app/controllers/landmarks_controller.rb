@@ -23,4 +23,11 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find(params[:id])
     erb :'/landmarks/edit'
   end
+
+  patch '/landmark/:id' do
+    landmark = Landmark.find(params[:id])
+    landmark.update(params[:landmark])
+    flash[:message] = "Successfully edited landmark."
+    redirect "landmarks/#{landmark.id}"
+  end
 end
